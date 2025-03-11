@@ -1,0 +1,115 @@
+.nav-item{
+    width: 80% !important;
+}
+
+.container-item{
+    width: 80% !important;
+    min-height: 84vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-item .item-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.container-item .top-card{
+    display: flex;
+    gap: 10px;
+}
+
+.container-item .item-details .card {
+    flex: 2;
+    max-width: 600px;
+}
+
+.container-item .item-details .card img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container-item .details{
+    flex: 2;       
+    padding: 10px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-item .details h1{
+    font-size: 60px;
+    text-align: center;
+}
+
+.container-item .details  p{
+    margin-left: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 92%;
+    text-align: center;
+}
+
+.container-item .details button{            
+    width: 90%;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(87,180,117);
+    background: linear-gradient(324deg, rgba(87,180,117,1) 0%, rgba(55,117,59,1) 37%, rgba(28,67,14,1) 100%);
+    outline: 2px solid black;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.container-item .description {
+    width: 100%;    
+}
+
+.container-item .description h2{
+    margin: 0;
+}
+
+.container-item .description p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;    
+    margin: 0;
+    margin-top: 10px;
+}
+
+
+
+@media (max-width: 800px) {
+    .navbar{
+        height: 14vh;
+    }
+
+    .navbar nav{
+        flex-direction: column;
+    }
+
+    .container-item, .container-card{
+        margin-top: 8vh;
+    }
+
+    .container-item .top-card {
+        flex-direction: column;
+    }
+
+    .container-item .item-details .card {
+        max-width: 100%;
+    }
+}

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../config/firebase";
 import "./Cards.css";
+import "./DetalleProducto.css"
+
 
 function DetalleProducto(){
 
@@ -46,15 +48,28 @@ function DetalleProducto(){
     if (!producto) return;
 
     return (
-        <div className="detalle">
-            <h2>{producto.title}</h2>
-            <div className="galeria producto">
-                <article className="card-producto">
-                    <img src={producto.image} alt= {producto.description}/>
-                    <p>$ {producto.price}</p>
-                    <Link to={`/category/${producto.category}`}>Volver</Link>
-                </article>                
-            </div>       
+        <div className="container-item">
+            <div className="item-details">
+                <div className="top-card">
+                    <div className="card">
+                        <img src={producto.image} alt= {producto.description}/>                  
+                    </div>
+
+                    <div className="details">
+                        <h1>{producto.title}</h1>                        
+                        <p>$ {producto.price}</p>                                        
+                        <button>Buy Now!</button>
+                        <Link to={`/category/${producto.category}`}>Volver</Link>
+                    </div>
+
+                </div>
+                
+                <div class="description">
+                    <h2>Description Product</h2>
+                    <p>{producto.description}</p>
+                </div>
+
+            </div>      
         </div>
     )
 }

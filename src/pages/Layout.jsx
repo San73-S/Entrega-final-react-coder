@@ -40,7 +40,7 @@ function Layout(){
                             <img src={item.image}/>
                             <div className="card-details">
                                 <p>{item.title}</p>
-                                <p>{item.price}</p>
+                                <p>${item.price}</p>
                                 <button>Buy Now!</button>
                             </div>            
                         </div>
