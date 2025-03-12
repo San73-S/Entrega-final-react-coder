@@ -42,9 +42,21 @@
     padding: 10px;  
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
 
+.container-item .details a{
+    align-self: flex-end;
+    text-decoration: none;
+}
+
+.container-item .details a img{
+    width: 20px;
+}
+
+.container-item .details a img:hover{
+    transform: scale(1.2);
 }
 
 .container-item .details h1{
@@ -61,6 +73,21 @@
     text-align: center;
 }
 
+.container-item .details .cant-button{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center ;
+}
+
+.cant-button p{
+    font-size: 22px !important;
+    margin: 0;
+    margin-left: 0 !important;
+}
+
 .container-item .details button{            
     width: 90%;
     height: 30px;
@@ -73,6 +100,10 @@
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
+}
+
+.details button:hover{
+    transform: scale(1.1);
 }
 
 .container-item .description {

@@ -5,26 +5,11 @@ import { Link } from "react-router-dom";
 import { db } from "../config/firebase";
 import "./Cards.css";
 import "./DetalleProducto.css"
+import iconCerrar from '../assets/images/cerrar.png';
+import AddItemButton from "../components/AddItemButton";
 
 
 function DetalleProducto(){
-
-    
-
-    /*const producto = listaProductos.find((producto)=>producto.id ==productoId);*/
-/*
-    const {productoId} = useParams();
-    const [producto, setProducto] = useState();
-
-    const getItemsList = async () =>{
-
-        const productoRef = doc(db, "productos", productoId); 
-        const productoSnap = await getDoc(productoRef);
-        setProducto({ id: productoSnap.id, ...productoSnap.data() });
-        console.log(productoSnap)
-    }
-    
-    getItemsList();*/
 
     const { productoId } = useParams();
     const [producto, setProducto] = useState();
@@ -41,10 +26,6 @@ function DetalleProducto(){
         getItemsList();
     }, [productoId]);
 
-    
-    
-    console.log(producto)
-
     if (!producto) return;
 
     return (
@@ -56,10 +37,11 @@ function DetalleProducto(){
                     </div>
 
                     <div className="details">
+                        <Link to={`/category/${producto.category}`}><img src={iconCerrar} alt="icono Cerrar" /></Link>
                         <h1>{producto.title}</h1>                        
-                        <p>$ {producto.price}</p>                                        
-                        <button>Buy Now!</button>
-                        <Link to={`/category/${producto.category}`}>Volver</Link>
+                        <p>$ {producto.price}</p>
+                        <AddItemButton></AddItemButton>                                       
+                        <button>Buy Now!</button>                        
                     </div>
 
                 </div>
