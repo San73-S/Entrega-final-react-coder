@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-function AddItemButton({initial, onAdd}){
-    const [quantity, setQuantity] = useState(1);
+function AddItemButton({quantity, setQuantity}){
 
     const incremento = () => {
         setQuantity(quantity + 1);

@@ -1,0 +1,69 @@
+.cart{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.cart .cart-top{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart .cart-top .cart-title{
+    margin: 0;
+    align-self: center;   
+    font-size: 34px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.cart .cart-top .cart-cancel{
+    width: 20px;
+    align-self: self-end;
+}
+
+.cart-item{
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    outline: 2px solid rgb(87,180,117);
+    padding: 10px;
+    border-radius: 10px;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-item p{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.cart-item img{
+    width: 100px;    
+}
+
+.cart .cart-check{
+    width: 20%;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(87,180,117);
+    background: linear-gradient(324deg, rgba(87,180,117,1) 0%, rgba(55,117,59,1) 37%, rgba(28,67,14,1) 100%);
+    outline: 2px solid black;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    align-self: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart .cart-check:hover{
+    transform: scale(1.1);
+}

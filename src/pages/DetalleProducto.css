@@ -88,7 +88,7 @@
     margin-left: 0 !important;
 }
 
-.container-item .details button{            
+.container-item .details button, .buttonBuy{            
     width: 90%;
     height: 30px;
     font-size: 18px;
@@ -100,7 +100,17 @@
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: white;
+    align-self: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.buttonBuy .buyNow{
+    margin: 0;
+    font-size: 20px !important;
+}
+
 
 .details button:hover{
     transform: scale(1.1);
