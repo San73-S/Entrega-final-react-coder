@@ -1,7 +1,6 @@
 import { getDoc, doc } from "firebase/firestore";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { db } from "../config/firebase";
 import "./Cards.css";
 import "./DetalleProducto.css"

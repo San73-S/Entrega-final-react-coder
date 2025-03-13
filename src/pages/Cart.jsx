@@ -1,9 +1,10 @@
 import { getDoc, doc } from "firebase/firestore";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../config/firebase";
 import iconCancelar from '../assets/images/cerrar.png';
 import "./Cart.css";
+
 
 
 function Cart(){
@@ -12,6 +13,7 @@ function Cart(){
     const [producto, setProducto] = useState();
     const location = useLocation();
     const cantidad = location.state?.cantidad || 1;
+    const [compraActiva, setCompraActiva] = useState(true);
 
     useEffect(() => {        
 
@@ -27,25 +29,36 @@ function Cart(){
 
     if (!producto) return;
 
-    console.log(producto);
-    console.log("En cart" + cantidad);
+    const cancelarCompra = ()=>{
+        setCompraActiva(false);
+    }
 
     return(
-        <div className="container-card cart">
+        <div className="">
 
-            <div className="cart-top">
-                <img className="cart-cancel" src={iconCancelar} alt="icono Cancelar" />
-                <p className="cart-title">{producto.title}</p>                
-            </div>            
+            {compraActiva ? (              
+                <div className="container-card cart">
+                    <div className="cart-top">
+                        <button className="cart-cancel" onClick={cancelarCompra}><img className="cart-img" src={iconCancelar} alt="icono Cancelar" /></button>
+                        
+                        <p className="cart-title">{producto.title}</p>                
+                    </div>            
 
-            <div className="cart-item">
-                <img src={producto.image} alt= {producto.title}/>                
-                <p>Cantidad: {cantidad} und. </p>
-                <p>Precio x und: ${producto.price}</p>
-                <p>Total: $ { (parseInt(producto.price) * cantidad ) }</p>
-            </div>
+                    <div className="cart-item">
+                        <img src={producto.image} alt= {producto.title}/>                
+                        <p>Cantidad: {cantidad} und. </p>
+                        <p>Precio x und: ${producto.price}</p>
+                        <p>Total: $ { (parseInt(producto.price) * cantidad ) }</p>
+                    </div>
 
-            <button className="cart-check">Checkout</button>     
+                    <button className="cart-check">Checkout</button> 
+                </div>
+            ) : (
+                <div className="container-card cart">
+                    <h2>No hay productos en el carrito.</h2>
+                    <Link to={`/`} className="cart-back">Back to menu</Link>
+                </div>                
+            )}   
 
         </div>
     )
